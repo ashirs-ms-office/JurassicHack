@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace xl2vso
 {
-    public class Program
+    class Program
     {
-        public void Main(string[] args)
+        static void Main(string[] args)
         {
         }
     }
