@@ -10,7 +10,12 @@ namespace xl2vso
     {
         public static void Initialize()
         {
-            throw new NotImplementedException("initialize the data");
+            //throw new NotImplementedException("initialize the data");
+            userName = "s.ashirvad@hotmail.com";
+            password = "VisualStudio1!";
+            accountName = "ashirvad";
+            projectName = "webLearning";
+
         }
 
         public static string  userName { get; private set; }

@@ -8,7 +8,7 @@ namespace xl2vso
         {
             VSOConfig.Initialize();
             VSOWorker _worker = new VSOWorker();
-            _worker.GetWorkItem();
+            _worker.QuickCreate(VSOWorker.WorkItemType.Bug);
         }
     }
 }

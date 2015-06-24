@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using VisualStudioOnline.Api.Rest.V1.Client;
 using VisualStudioOnline.Api.Rest.V1.Model;
 
@@ -22,9 +23,21 @@ namespace xl2vso
         public void QuickCreate(WorkItemType type)
         {
             var item = new WorkItem();
-            item.Fields["System.Title"] = "Build Feature 2";
+            item.Fields["System.Title"] = "Bug with snapshot";
             item.Fields["System.AssignedTo"] = "Ashirvad Sahu";
             item.Rev = 1;
+
+            //create attachment
+            byte[] content = GetBytesFromFile(@"C:\Users\Ashirvad\Desktop\thX4SG17TP.jpg");
+            var fileRef = _workItemClient.UploadAttachment(null, null, "test.jpg", content).Result;
+
+            // add attachment to the bug
+            item.Relations.Add(new WorkItemRelation()
+            {
+                Url = fileRef.Url,
+                Rel= "AttachedFile",
+                Attributes = new RelationAttributes() { Comment = "this is a weird bug"}
+            });
             item = _workItemClient.CreateWorkItem(VSOConfig.projectName, type.ToString(), item).Result;
         }
 
@@ -42,6 +55,29 @@ namespace xl2vso
             bug.Fields["System.Iteration"] = @"OExt\Current";
             bug.Rev = 1;
             bug = _workItemClient.CreateWorkItem(VSOConfig.projectName, "Bug", bug).Result;
+        }
+
+        private byte[] GetBytesFromFile(string fullFilePath)
+        {
+            // this method is limited to 2^32 byte files (4.2 GB)
+
+            FileStream fs = null;
+            try
+            {
+                fs = File.OpenRead(fullFilePath);
+                byte[] bytes = new byte[fs.Length];
+                fs.Read(bytes, 0, Convert.ToInt32(fs.Length));
+                return bytes;
+            }
+            finally
+            {
+                if (fs != null)
+                {
+                    fs.Close();
+                    fs.Dispose();
+                }
+            }
+
         }
     }
 }
