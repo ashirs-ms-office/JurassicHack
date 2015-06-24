@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace xl2vso
 {
@@ -10,6 +6,9 @@ namespace xl2vso
     {
         static void Main(string[] args)
         {
+            VSOConfig.Initialize();
+            VSOWorker _worker = new VSOWorker();
+            _worker.GetWorkItem();
         }
     }
 }
