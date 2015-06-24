@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VSOConfig.cs" />
     <Compile Include="VSOWorker.cs" />
+    <Compile Include="xl2vsoModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
