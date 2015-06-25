@@ -16,7 +16,7 @@ namespace xl2vso
 
         public string IterationPath { get; set; } // "System.IterationPath":"OExt\\QR10\\04-Apr"
 
-        public int priority { get; set; } //"Microsoft.VSTS.Common.Priority":1,
+        public int Priority { get; set; } //"Microsoft.VSTS.Common.Priority":1,
 
         public int ParentID { get; set; } // use relations
 
@@ -27,6 +27,8 @@ namespace xl2vso
         public string ProjectName { get; set; } // "System.TeamProject":"OExt"
 
         public int Estimate { get; set; } //     "Microsoft.VSTS.Scheduling.Effort": 8,
+
+        public string WorkItemType { get; set; }
 
     }
 }
