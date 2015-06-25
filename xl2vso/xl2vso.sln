@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.22823.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xl2vso", "xl2vso\xl2vso.csproj", "{090D6059-C4FE-4499-A045-8BDD649AABD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xl2vsoAddIn", "xl2vsoAddIn\xl2vsoAddIn.csproj", "{15B91E82-A355-4E98-BA62-7AE46197401F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{090D6059-C4FE-4499-A045-8BDD649AABD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{090D6059-C4FE-4499-A045-8BDD649AABD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{090D6059-C4FE-4499-A045-8BDD649AABD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{090D6059-C4FE-4499-A045-8BDD649AABD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B91E82-A355-4E98-BA62-7AE46197401F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B91E82-A355-4E98-BA62-7AE46197401F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B91E82-A355-4E98-BA62-7AE46197401F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B91E82-A355-4E98-BA62-7AE46197401F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
