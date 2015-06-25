@@ -26,9 +26,11 @@ namespace xl2vso
 
         public string ProjectName { get; set; } // "System.TeamProject":"OExt"
 
-        public int Estimate { get; set; } //     "Microsoft.VSTS.Scheduling.Effort": 8,
+        public int OriginalEstimate { get; set; } //     "Microsoft.VSTS.Scheduling.OriginalEstimate": 8,
 
-        public string WorkItemType { get; set; }
+        public string WorkItemType { get; set; } // Bug, Feature, Task
+
+        public string TargetDate { get; set; } //2015-07-07
 
     }
 }

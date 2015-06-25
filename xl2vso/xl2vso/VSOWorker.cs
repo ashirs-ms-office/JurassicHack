@@ -49,7 +49,7 @@ namespace xl2vso
         public void _office_CreateWorkItem()
         {
             xl2vsoModel dataModel = new xl2vsoModel();
-            dataModel.Title = "New work item";
+            dataModel.Title = "New work item 4";
             dataModel.ProjectName = "OExt";
             dataModel.AssignedTo = "Ashirvad Sahu";
             dataModel.AreaPath = @"OExt\Developer Experience and Analytics\Dev Exp\0-60 On Boarding";
@@ -57,7 +57,7 @@ namespace xl2vso
             dataModel.Priority = 4;
             dataModel.CreatedBy = "Keyur Patel";
             dataModel.Description = "here is the description";
-            dataModel.Estimate = 7;
+            dataModel.OriginalEstimate = 7;
             dataModel.WorkItemType = "Task";
 
             CreateWorkItem(dataModel);
@@ -84,15 +84,9 @@ namespace xl2vso
             workItem.Fields["System.TeamProject"] = dataModel.Title;
             workItem.Fields["System.AssignedTo"] = dataModel.AssignedTo;
             workItem.Fields["System.Description"] = dataModel.Description;
+            workItem.Fields["Microsoft.VSTS.Scheduling.OriginalEstimate"] = dataModel.OriginalEstimate;
+            workItem.Fields["Microsoft.VSTS.Scheduling.TargetDate"] = "2015-07-07";
 
-            // not shown in actual work item
-            workItem.Fields["System.CreatedBy"] = dataModel.CreatedBy;
-            workItem.Fields["Microsoft.VSTS.Scheduling.Effort"] = dataModel.Estimate;
-
-            // run time error
-            //workItem.Fields["System.Iteration"] = dataModel.IterationPath;
-
-            //workItem.Rev = 1;
             workItem = _workItemClient.CreateWorkItem(VSOConfig.projectName, dataModel.WorkItemType, workItem).Result;
         }
         private byte[] GetBytesFromFile(string fullFilePath)
